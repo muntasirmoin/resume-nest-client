@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer/Footer";
-import { Navbar } from "@/components/shared/Navbar/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
+
 // import Navbar from "@/components/shared/Navbar/Navbar";
 
 export default function PublicLayout({
@@ -10,7 +11,8 @@ export default function PublicLayout({
   return (
     <>
       <Navbar />
-      <main className="min-h-dvh">{children}</main>
+
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </>
   );
