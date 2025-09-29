@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section
@@ -23,10 +25,12 @@ export default function About() {
           <div className="p-1 rounded-xl bg-gradient-to-br from-gray-700 via-gray-900 to-black shadow-[0_0_20px_rgba(0,0,0,0.6)]">
             <div className="relative w-full aspect-square rounded-lg overflow-hidden">
               {/* Image */}
-              <img
+              <Image
                 src="https://res.cloudinary.com/dta2gcxsl/image/upload/v1756659787/68621_1_1_-Photoroom_gtfbgx.png"
                 alt="Muntasir Moin Chowdhury"
-                className="w-full h-full object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105 z-0"
+                width={500} // pick approximate width
+                height={500} // pick approximate height
+                className="w-full h-full object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105"
               />
 
               {/* Overlay Blur - 90% visibility */}

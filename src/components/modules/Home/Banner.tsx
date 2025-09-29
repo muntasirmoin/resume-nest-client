@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 // import { FaEnvelope, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
@@ -56,7 +57,7 @@ const Banner = () => {
       clearTimeout(fadeOutTimeout);
       clearTimeout(changeTitleTimeout);
     };
-  }, [index]);
+  }, [index, titles.length]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -167,9 +168,11 @@ const Banner = () => {
         ${bubble ? "shadow-[0_0_15px_5px_rgba(139,92,246,0.7)] scale-105" : ""}
       `}
             >
-              <img
+              <Image
                 src="https://res.cloudinary.com/dta2gcxsl/image/upload/v1756660008/Muntasir_Moin_Chowdhury_-_Copy-Photoroom_1_z0bji1.png"
                 alt="Developer"
+                width={288} // equivalent to w-72
+                height={328} // closest to h-82 (since h-82 is ~328px in Tailwind)
                 className="w-60 md:w-72 h-82 md:h-82 object-cover rounded-full border-4 border-background"
               />
             </div>

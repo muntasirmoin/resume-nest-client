@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 export const projectData = [
   {
@@ -81,10 +82,12 @@ const Projects = () => {
             >
               {/* Image */}
               <div className="md:w-1/2 w-full rounded-lg overflow-hidden shadow-lg">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[290px] object-fit transition-transform duration-500 hover:scale-105"
+                  width={600} // give an approximate width
+                  height={290} // set height close to your design
+                  className="w-full h-[290px] object-cover transition-transform duration-500 hover:scale-105 rounded-md"
                 />
               </div>
 
