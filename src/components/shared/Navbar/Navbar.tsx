@@ -18,6 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const baseNavigationLinks = [
   { href: "/", label: "Home", icon: HouseIcon, active: true },
@@ -37,6 +38,14 @@ export default function Navbar() {
       ? { href: "/login", label: "Login", icon: LogInIcon }
       : { href: "/dashboard", label: "Dashboard", icon: UserIcon },
   ];
+
+  const handleLogout = async () => {
+    // Show toast immediately
+    toast.success("Logging out...", { duration: 15000 });
+
+    // Trigger signOut and redirect
+    await signOut({ callbackUrl: "/login" });
+  };
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-sm shadow-sm bg-slate-900/80 px-4 md:px-6">
@@ -90,7 +99,7 @@ export default function Navbar() {
                         </Link>
 
                         <button
-                          onClick={() => signOut({ callbackUrl: "/login" })}
+                          onClick={handleLogout}
                           className="flex items-center gap-2 text-white text-lg font-medium py-2 px-3 rounded-md 
              hover:bg-red-900/20 hover:text-red-400 transition-colors duration-200"
                         >
@@ -154,7 +163,8 @@ export default function Navbar() {
                     <span>{link.label}</span>
                   </Link>
                   <button
-                    onClick={() => signOut({ callbackUrl: "/login" })}
+                    // onClick={() => signOut({ callbackUrl: "/login" })}
+                    onClick={handleLogout}
                     className="cursor-pointer relative flex items-center gap-2 py-2 px-3 rounded-md text-white font-medium
              after:block after:w-0 after:h-[2px] after:bg-white after:absolute after:bottom-0 after:left-0
              hover:after:w-full after:transition-all after:duration-300"
