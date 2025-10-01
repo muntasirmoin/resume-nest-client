@@ -80,22 +80,22 @@ export default function UpdateBlogTable() {
       <Table className="bg-slate-800 text-white rounded-xl shadow-2xl overflow-hidden">
         <TableHeader>
           <TableRow className="bg-slate-900">
-            <TableHead className="w-[50px] text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="w-[50px] text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               #
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 font-medium text-center uppercase text-sm py-3 px-4">
               Title
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 font-medium text-center uppercase text-sm py-3 px-4">
               Content
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 font-medium text-center uppercase text-sm py-3 px-4">
               Status
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 font-medium text-center uppercase text-sm py-3 px-4">
               Published At
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 font-medium text-center uppercase text-sm py-3 px-4">
               Updated At
             </TableHead>
             <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
@@ -123,34 +123,34 @@ export default function UpdateBlogTable() {
                 key={blog.id}
                 className="hover:bg-slate-700 transition duration-200 ease-in-out"
               >
-                <TableCell className="py-3 px-4">
+                <TableCell className="py-3 text-center px-4">
                   {(meta.page - 1) * meta.limit + idx + 1}
                 </TableCell>
-                <TableCell className="py-3 px-4 font-semibold">
+                <TableCell className="py-3 text-center px-4 font-semibold">
                   {blog.title}
                 </TableCell>
-                <TableCell className="py-3 px-4 line-clamp-1">
+                <TableCell className="py-3 text-center px-4 line-clamp-1">
                   {blog.content.slice(0, 10)}...
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="py-3 text-center px-4">
                   {blog.published ? (
                     <Badge className="bg-green-600 text-white">Published</Badge>
                   ) : (
                     <Badge className="bg-yellow-500 text-white">Draft</Badge>
                   )}
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="py-3 text-center px-4">
                   {format(new Date(blog.createdAt), "dd MMM yyyy, hh:mm a")}
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="py-3 text-center px-4">
                   {format(new Date(blog.updatedAt), "dd MMM yyyy, hh:mm a")}
                 </TableCell>
-                <TableCell className="py-3 px-4 flex gap-2">
+                <TableCell className="py-3 text-center px-4 flex gap-2">
                   <button
                     onClick={() =>
                       router.push(`/dashboard/blog/update-blog/${blog.id}`)
                     }
-                    className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700 text-white"
+                    className="w-full cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-xl font-semibold transition shadow-lg disabled:opacity-50"
                   >
                     Edit
                   </button>

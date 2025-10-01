@@ -17,12 +17,12 @@ export default function UpdateBlogPage() {
         backdropFilter: "blur(4px)",
       }}
     >
-      <h1 className="text-4xl font-extrabold text-white mb-6">
-        Blog Management
-      </h1>
-      <p className="text-gray-300 mb-8">
-        Manage your blogs: edit, delete, or view publication status.
-      </p>
+      <div className="max-w-2xl mx-auto text-center mb-6 text-white">
+        <h2 className="text-3xl font-bold">Update Blog</h2>
+        <p className="text-gray-300 mt-2">
+          Edit your blog content and control its publication status.
+        </p>
+      </div>
 
       <UpdateBlogTable />
     </div>

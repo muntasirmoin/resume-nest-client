@@ -100,12 +100,13 @@ export default function DeleteBlogTable() {
 
   return (
     <div className="overflow-x-auto p-4">
-      <h2 className="text-3xl font-extrabold text-gray-100 mb-6">
-        Blog Dashboard
-      </h2>
-      <p className="text-gray-300 mb-4">
-        View all your blogs, their status, and publication time.
-      </p>
+      <div className="max-w-2xl mx-auto text-center mb-6 text-white">
+        <h2 className="text-3xl font-bold text-red-400">🗑️ Delete Blog</h2>
+        <p className="text-gray-300 mt-2">
+          Permanently remove this blog post from your dashboard. This action
+          cannot be undone.
+        </p>
+      </div>
 
       <Table className="bg-slate-800 text-white rounded-xl shadow-2xl overflow-hidden">
         <TableHeader>
@@ -151,7 +152,7 @@ export default function DeleteBlogTable() {
             blogs.map((blog, idx) => (
               <TableRow
                 key={blog.id}
-                className="hover:bg-slate-700 transition duration-200 ease-in-out cursor-pointer"
+                className="hover:bg-slate-700 transition duration-200 ease-in-out "
               >
                 <TableCell className="py-3 px-4">
                   {(meta.page - 1) * meta.limit + idx + 1}
@@ -180,7 +181,7 @@ export default function DeleteBlogTable() {
                 <TableCell className="py-3 px-4 flex gap-2">
                   <button
                     onClick={() => handleDelete(blog.id)}
-                    className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded-lg transition"
+                    className="bg-red-600 cursor-pointer hover:bg-red-700 text-white py-1 px-3 rounded-lg transition"
                   >
                     Delete
                   </button>

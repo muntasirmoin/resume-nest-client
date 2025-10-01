@@ -30,6 +30,8 @@ export default function UpdateBlogForm() {
     register,
     handleSubmit,
     reset,
+    setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<UpdateBlogFormData>({
     resolver: zodResolver(updateBlogSchema),
@@ -47,7 +49,14 @@ export default function UpdateBlogForm() {
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_BASE_API}/blog/${id}`
         );
-        reset(res.data.data); // prefill form
+
+        const blog = res.data.data;
+
+        reset({
+          title: blog.title,
+          content: blog.content,
+          published: blog.published ?? false, // ✅ ensure boolean
+        });
       } catch (err: any) {
         toast.error(err.message || "Failed to fetch blog data");
       } finally {
@@ -77,9 +86,7 @@ export default function UpdateBlogForm() {
   return (
     <>
       <div className="max-w-2xl mx-auto text-center mb-6 text-white">
-        <h2 className="text-4xl font-extrabold bg-gradient-to-r from-indigo-400 via-pink-400 to-yellow-400 text-transparent bg-clip-text">
-          ✍️ Update Blog
-        </h2>
+        <h2 className="text-3xl font-bold">Update Blog</h2>
         <p className="text-gray-300 mt-2">
           Edit your blog content and control its publication status.
         </p>
@@ -127,13 +134,18 @@ export default function UpdateBlogForm() {
           </div>
 
           {/* Published */}
-          <div className="flex items-center gap-3">
-            <Checkbox {...register("published")} id="published" />
+          <div className="flex items-center gap-3 mt-4">
+            <Checkbox
+              id="published"
+              className="text-white"
+              checked={!!watch("published")}
+              onCheckedChange={(val) => setValue("published", val as boolean)}
+            />
             <label
               htmlFor="published"
-              className="font-medium text-indigo-400 uppercase"
+              className="font-semibold text-indigo-300 tracking-wide cursor-pointer select-none hover:text-indigo-400 transition"
             >
-              Publish immediately
+              Publish Immediately
             </label>
           </div>
 
@@ -141,7 +153,7 @@ export default function UpdateBlogForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 mt-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-lg font-semibold shadow-lg rounded-xl transition-all duration-200"
+            className="w-full cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition shadow-lg disabled:opacity-50"
           >
             {isSubmitting ? "Updating..." : "Update Blog"}
           </Button>
