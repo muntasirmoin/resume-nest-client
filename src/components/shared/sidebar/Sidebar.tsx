@@ -39,10 +39,10 @@ const sidebarLinks = [
     label: "Blog",
     icon: FileTextIcon, // or another icon you prefer
     children: [
-      { href: "/dashboard/blog/create", label: "Create Blog" },
-      { href: "/dashboard/blog/delete", label: "Delete Blog" },
-      { href: "/dashboard/blog/update", label: "Update Blog" },
-      { href: "/dashboard/blog/view", label: "View All Blogs" },
+      { href: "/dashboard/blog/view-all-blog", label: "View All Blogs" },
+      { href: "/dashboard/blog/create-blog", label: "Create Blog" },
+      { href: "/dashboard/blog/delete-blog", label: "Delete Blog" },
+      { href: "/dashboard/blog/update-blog", label: "Update Blog" },
     ],
   },
   {

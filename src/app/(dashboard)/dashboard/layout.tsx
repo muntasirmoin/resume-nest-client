@@ -17,7 +17,7 @@ export default function DashboardLayout({
         <Topbar />
 
         {/* Page content */}
-        <div className="flex-1 p-6 bg-slate-100 dark:bg-slate-800">
+        <div className="flex-1 p-1 bg-slate-100 dark:bg-slate-800">
           {children}
         </div>
       </div>
