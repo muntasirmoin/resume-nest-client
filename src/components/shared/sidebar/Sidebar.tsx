@@ -50,10 +50,10 @@ const sidebarLinks = [
     label: "About",
     icon: UserIcon, // or any icon you prefer
     children: [
-      { href: "/dashboard/about/create", label: "Create About" },
-      { href: "/dashboard/about/delete", label: "Delete About" },
-      { href: "/dashboard/about/update", label: "Update About" },
-      { href: "/dashboard/about/view", label: "View About" },
+      { href: "/dashboard/about/view-about", label: "View About" },
+      { href: "/dashboard/about/create-about", label: "Create About" },
+      { href: "/dashboard/about/management-about", label: "Management About" },
+      // { href: "/dashboard/about/update", label: "Update About" },
     ],
   },
   {
