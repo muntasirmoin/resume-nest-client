@@ -28,10 +28,10 @@ const sidebarLinks = [
     label: "Projects",
     icon: FolderKanban,
     children: [
-      { href: "/dashboard/projects/create", label: "Create Project" },
-      { href: "/dashboard/projects/delete", label: "Delete Project" },
-      { href: "/dashboard/projects/update", label: "Update Project" },
-      { href: "/dashboard/projects/view", label: "View All Projects" },
+      { href: "/dashboard/project/view-project", label: "View All Projects" },
+      { href: "/dashboard/project/create-project", label: "Create Project" },
+      { href: "/dashboard/project/delete-project", label: "Delete Project" },
+      { href: "/dashboard/project/update-project", label: "Update Project" },
     ],
   },
   {

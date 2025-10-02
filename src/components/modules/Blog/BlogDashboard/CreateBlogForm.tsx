@@ -57,7 +57,7 @@ export default function CreateBlogForm() {
       // Success
       toast.success("Blog created successfully!");
       reset();
-      router.push("/dashboard/create-blog");
+      router.push("/dashboard/blog/view-all-blog");
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       // network error or unexpected error
