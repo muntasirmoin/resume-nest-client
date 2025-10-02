@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
+
 import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
   FaPhone,
-  FaStar,
   FaTwitter,
 } from "react-icons/fa";
 
