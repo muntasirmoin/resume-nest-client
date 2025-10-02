@@ -22,9 +22,9 @@ import toast from "react-hot-toast";
 
 const baseNavigationLinks = [
   { href: "/", label: "Home", icon: HouseIcon, active: true },
-  { href: "#projects", label: "Project's", icon: InboxIcon },
-  { href: "#blog", label: "Blog", icon: FileTextIcon },
-  { href: "#about", label: "About", icon: AtSignIcon },
+  { href: "/#projects", label: "Project's", icon: InboxIcon },
+  { href: "/#blog", label: "Blog", icon: FileTextIcon },
+  { href: "/#about", label: "About", icon: AtSignIcon },
 ];
 
 export default function Navbar() {
