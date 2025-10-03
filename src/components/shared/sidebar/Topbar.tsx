@@ -16,7 +16,7 @@ export default function Topbar() {
   if (!session) return null; // hide if not logged in
 
   const { user } = session;
-  console.log(user);
+  console.log("TopBar user", user);
   return (
     <header className="flex items-center justify-between px-1 py-1 backdrop-blur-sm shadow-sm bg-slate-900/80 text-white">
       {/* Left: User Info*/}

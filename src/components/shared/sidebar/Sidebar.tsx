@@ -70,7 +70,7 @@ export default function Sidebar() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
+  console.log("session", session);
   const handleLogout = async () => {
     toast.success("Logging out...", { duration: 15000 });
     await signOut({ callbackUrl: "/login" });

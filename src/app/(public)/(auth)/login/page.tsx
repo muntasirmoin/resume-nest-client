@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-import axios from "axios";
+import { signIn } from "next-auth/react";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
@@ -21,7 +21,7 @@ const loginSchema = z.object({
 
 type LoginFormData = z.infer<typeof loginSchema>;
 
-const LoginPage = () => {
+export default function LoginPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -37,38 +37,52 @@ const LoginPage = () => {
 
   const onSubmit = async (data: LoginFormData) => {
     setLoading(true);
+
     try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_API}/auth/login`,
-        data
-      );
-      if (res) {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: data.email,
+        password: data.password,
+      });
+
+      if (res?.error) {
+        toast.error(res.error);
+        // Optionally map error to field
+        if (res.error.toLowerCase().includes("email")) {
+          setError("email", { type: "server", message: res.error });
+        } else if (res.error.toLowerCase().includes("password")) {
+          setError("password", { type: "server", message: res.error });
+        }
+      } else {
         toast.success("Logged in successfully!");
         router.push("/dashboard");
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      const message =
-        err.response?.data?.message || err?.message || "Login failed";
-      console.log(err);
-      toast.error(message);
-
-      // Example: map server message to field
-      if (message.toLowerCase().includes("email")) {
-        setError("email", { type: "server", message });
-      } else if (message.toLowerCase().includes("password")) {
-        setError("password", { type: "server", message });
-      }
+      toast.error(err?.message || "Login failed");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleDemoLogin = () => {
-    reset({
-      email: "admin@example.com",
-      password: "Strong@Pssw0rd",
-    });
+  const handleDemoLogin = async () => {
+    setLoading(true);
+    try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: "admin@example.com",
+        password: "Strong@Pssw0rd",
+      });
+
+      if (res?.error) {
+        toast.error(res.error);
+      } else {
+        toast.success("Logged in as demo admin!");
+        router.push("/dashboard");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -116,24 +130,28 @@ const LoginPage = () => {
         </div>
 
         {/* Buttons */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full mb-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition disabled:opacity-50"
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
+        <div className="flex flex-col items-center gap-4 mt-6">
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 
+              hover:from-indigo-600 hover:to-blue-500 text-white font-bold rounded-2xl 
+              shadow-lg transition transform cursor-pointer disabled:opacity-50"
+          >
+            {loading ? "Logging in..." : "Login"}
+          </button>
 
-        <button
-          type="button"
-          onClick={handleDemoLogin}
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition"
-        >
-          Demo Admin Login
-        </button>
+          <button
+            type="button"
+            onClick={handleDemoLogin}
+            className="w-full justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 
+              hover:from-emerald-600 hover:to-green-500 text-white font-bold rounded-2xl 
+              shadow-lg transition transform cursor-pointer"
+          >
+            Demo Admin Login
+          </button>
+        </div>
       </form>
     </div>
   );
-};
-
-export default LoginPage;
+}

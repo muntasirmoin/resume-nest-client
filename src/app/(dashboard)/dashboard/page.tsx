@@ -1,26 +1,24 @@
-// import { getUserSession } from "@/helpers/getUserSession";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Welcome to your dashboard",
-};
+import DashboardOverview from "@/components/ui/DashboardPieChart";
 
-export default async function DashboardHome() {
-  const quote = "The secret of getting ahead is getting started. – Mark Twain";
-
-  //   const session = await getUserSession();
-  //   console.log(session);
-
+export default function DashboardHome() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6 w-full">
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">
-        {/* Welcome, {session?.user?.name}! */} Welcome To Dashboard
-      </h1>
-      <p className="text-lg text-gray-600 italic text-center">
-        {/* Email {session?.user?.email} */}
-      </p>
-      <p className="text-lg text-gray-600 italic text-center">{quote}</p>
+    <div
+      className="min-h-screen flex flex-col items-center py-4 px-4"
+      style={{
+        background: `linear-gradient(135deg, rgba(8,13,32,0.9), rgba(5,8,24,0.95), rgba(23,37,84,0.85))`,
+        backdropFilter: "blur(6px)",
+      }}
+    >
+      {/* Motivational Quote */}
+      {/* <h2 className="text-white text-xl md:text-2xl font-semibold mb-8 text-center max-w-2xl"></h2> */}
+      <h3 className="text-white text-3xl font-bold mb-6 text-center">
+        Welcome To Dashboard
+      </h3>
+      <div className="w-full max-w-6xl p-6">
+        <DashboardOverview totalBlogs={5} totalProjects={10} />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,3 @@
-import About from "@/components/modules/about/About";
-
-import Blog from "@/components/modules/Blog/Blog";
 import Contact from "@/components/modules/contacts/Contacts";
 import Education from "@/components/modules/education/Education";
 import Banner from "@/components/modules/Home/Banner";
@@ -25,6 +22,13 @@ export default async function HomePage() {
   // await new Promise((resolve) => setTimeout(resolve, 2000));
   const about = await getAboutData();
   const blogs = await getBlogs();
+  // await new Promise((resolve) => setTimeout(resolve, 20000));
+
+  // const forceError = true; // toggle this to true/false
+
+  // if (forceError) {
+  //   throw new Error("Forced error for testing!");
+  // }
 
   return (
     <div>
