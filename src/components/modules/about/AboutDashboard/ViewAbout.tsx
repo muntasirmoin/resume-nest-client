@@ -72,7 +72,7 @@ export default function ViewAbout() {
     );
 
   return (
-    <div className="max-w-3xl mx-auto p-8 rounded-3xl shadow-xl bg-slate-900/70 backdrop-blur-lg border border-slate-700 text-white transition-transform transform hover:scale-105">
+    <div className="max-w-3xl mx-auto p-8 rounded-3xl shadow-xl bg-slate-900/70 backdrop-blur-lg border border-slate-700 text-white transition-transform transform ">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-extrabold flex items-center justify-center gap-2 animate-fade-in">

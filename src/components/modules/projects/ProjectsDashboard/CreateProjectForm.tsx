@@ -101,7 +101,9 @@ export default function CreateProjectForm() {
               className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white"
             />
             {errors.title && (
-              <p className="text-red-400 text-xs">{errors.title.message}</p>
+              <p className="text-red-400 text-xs mt-2">
+                {errors.title.message}
+              </p>
             )}
           </div>
 
@@ -115,7 +117,7 @@ export default function CreateProjectForm() {
               className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white"
             />
             {errors.description && (
-              <p className="text-red-400 text-xs">
+              <p className="text-red-400 text-xs mt-2">
                 {errors.description.message}
               </p>
             )}
@@ -132,7 +134,9 @@ export default function CreateProjectForm() {
               className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white"
             />
             {errors.thumbnail && (
-              <p className="text-red-400 text-xs">{errors.thumbnail.message}</p>
+              <p className="text-red-400 text-xs mt-2">
+                {errors.thumbnail.message}
+              </p>
             )}
           </div>
 
@@ -148,7 +152,7 @@ export default function CreateProjectForm() {
                 className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white"
               />
               {errors.projectLink && (
-                <p className="text-red-400 text-xs">
+                <p className="text-red-400 text-xs mt-2">
                   {errors.projectLink.message}
                 </p>
               )}
@@ -161,7 +165,7 @@ export default function CreateProjectForm() {
                 className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white"
               />
               {errors.liveSite && (
-                <p className="text-red-400 text-xs">
+                <p className="text-red-400 text-xs mt-2">
                   {errors.liveSite.message}
                 </p>
               )}
@@ -180,7 +184,9 @@ export default function CreateProjectForm() {
               Separate features with commas
             </p>
             {errors.features && (
-              <p className="text-red-400 text-xs">{errors.features.message}</p>
+              <p className="text-red-400 text-xs mt-2">
+                {errors.features.message}
+              </p>
             )}
           </div>
 

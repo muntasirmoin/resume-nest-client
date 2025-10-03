@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard Home",
+  title: "Dashboard",
   description: "Welcome to your dashboard",
 };
 

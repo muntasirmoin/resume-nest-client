@@ -34,8 +34,9 @@ export default async function HomePage() {
 
       <Education />
       <Skills />
-
-      <BlogManagement blogs={blogs} />
+      <section id="blog">
+        <BlogManagement blogs={blogs} />
+      </section>
 
       <Contact />
     </div>

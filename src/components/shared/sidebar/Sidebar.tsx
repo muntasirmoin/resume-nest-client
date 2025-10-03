@@ -56,13 +56,13 @@ const sidebarLinks = [
       // { href: "/dashboard/about/update", label: "Update About" },
     ],
   },
-  {
-    href: "/dashboard/user",
-    label: "User",
-    icon: UserCog, // different icon for user management
-    children: [{ href: "/dashboard/user/update", label: "Update User" }],
-  },
-  { href: "/dashboard/settings", label: "Settings", icon: Settings },
+  // {
+  //   href: "/dashboard/user",
+  //   label: "User",
+  //   icon: UserCog, // different icon for user management
+  //   children: [{ href: "/dashboard/user/update", label: "Update User" }],
+  // },
+  // { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
 
 export default function Sidebar() {

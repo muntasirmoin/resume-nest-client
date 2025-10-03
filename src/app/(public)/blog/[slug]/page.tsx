@@ -2,8 +2,13 @@
 interface BlogPageProps {
   params: { slug: string };
 }
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Blog Details",
+  description: "Welcome to Blog Details Page",
+};
+
+import { Metadata } from "next";
 import Link from "next/link";
 async function getBlog(id: string) {
   console.log(id);

@@ -194,6 +194,11 @@ export default function CreateAboutForm() {
                 placeholder="LinkedIn URL"
                 className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white placeholder-gray-400 rounded-xl px-3 py-2 md:px-4 md:py-3 focus:ring-2 focus:ring-indigo-500"
               />
+              {errors.linkedin && (
+                <p className="text-red-400 text-xs md:text-sm mt-1">
+                  {errors.linkedin.message}
+                </p>
+              )}
             </div>
             <div>
               <label className="text-indigo-300 font-semibold text-sm md:text-base">
@@ -204,6 +209,11 @@ export default function CreateAboutForm() {
                 placeholder="GitHub URL"
                 className="mt-1 w-full bg-slate-800/70 border border-slate-600 text-white placeholder-gray-400 rounded-xl px-3 py-2 md:px-4 md:py-3 focus:ring-2 focus:ring-indigo-500"
               />
+              {errors.github && (
+                <p className="text-red-400 text-xs md:text-sm mt-1">
+                  {errors.github.message}
+                </p>
+              )}
             </div>
           </div>
 

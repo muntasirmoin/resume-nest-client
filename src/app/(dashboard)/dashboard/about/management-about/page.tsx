@@ -1,4 +1,10 @@
 import ManagementAbout from "@/components/modules/about/AboutDashboard/ManagementAbout";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Management ",
+  description: "Welcome to About Management  Page",
+};
 
 export default function CreateAboutPage() {
   return (

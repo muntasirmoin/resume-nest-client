@@ -1,9 +1,9 @@
 import ViewAbout from "@/components/modules/about/AboutDashboard/ViewAbout";
-import BlogTable from "@/components/modules/Blog/BlogDashboard/ViewBlogTable";
+
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "All Blogs",
-  description: "Welcome to All Blog Page",
+  title: "About Details",
+  description: "Welcome to About Page",
 };
 
 const page = () => {
