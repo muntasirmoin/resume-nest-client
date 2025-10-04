@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // import { FaEnvelope, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
 // const resume_pdf = "http://localhost:5173/muntasir-resume-assignment.pdf";
-const resume_pdf = "/muntasir-resume-assignment.pdf";
+const resume_pdf = "/Muntasir_Full_Stack_Developer.pdf";
 
 // const socialLinks = [
 //   { icon: FaFacebook, label: "Facebook", href: "#" },

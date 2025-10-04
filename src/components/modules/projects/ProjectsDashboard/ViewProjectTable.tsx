@@ -24,6 +24,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { RiLoader2Line } from "react-icons/ri";
 
 type Project = {
   id: string;
@@ -74,7 +75,12 @@ export default function ViewProjectsTable() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 text-white">
-      <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
+      <div className="max-w-2xl mx-auto text-center mb-2 text-white">
+        <h2 className="text-3xl font-bold">Projects Table</h2>
+        <p className="text-gray-300 mt-2">
+          View all your Projects with Thumbnail, Title, Description, Features...
+        </p>
+      </div>
 
       <div className="rounded-lg border border-slate-700 overflow-hidden bg-slate-900/90">
         <Table>
@@ -105,7 +111,11 @@ export default function ViewProjectsTable() {
             {loading ? (
               <TableRow>
                 <TableCell colSpan={6} className="text-center text-gray-400">
-                  Loading...
+                  <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+                    <RiLoader2Line className="text-2xl animate-spin" />
+                    <span>Loading...</span>
+                    <RiLoader2Line className="text-2xl animate-spin" />
+                  </div>
                 </TableCell>
               </TableRow>
             ) : projects.length === 0 ? (

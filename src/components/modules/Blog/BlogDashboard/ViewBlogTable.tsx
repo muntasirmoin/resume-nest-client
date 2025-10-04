@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { RiLoader2Line } from "react-icons/ri";
 
 interface IBlog {
   id: string;
@@ -107,7 +108,11 @@ export default function BlogTable() {
           {loading ? (
             <TableRow>
               <TableCell colSpan={6} className="text-center text-gray-400">
-                Loading...
+                <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+                  <RiLoader2Line className="text-2xl animate-spin" />
+                  <span>Loading...</span>
+                  <RiLoader2Line className="text-2xl animate-spin" />
+                </div>
               </TableCell>
             </TableRow>
           ) : blogs.length === 0 ? (

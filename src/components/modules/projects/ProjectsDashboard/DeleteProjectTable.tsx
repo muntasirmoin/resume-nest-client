@@ -25,6 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { RiLoader2Line } from "react-icons/ri";
 
 type Project = {
   id: string;
@@ -140,7 +141,11 @@ export default function DeleteProjectsTable() {
             {loading ? (
               <TableRow>
                 <TableCell colSpan={6} className="text-center text-gray-400">
-                  Loading...
+                  <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+                    <RiLoader2Line className="text-2xl animate-spin" />
+                    <span>Loading...</span>
+                    <RiLoader2Line className="text-2xl animate-spin" />
+                  </div>
                 </TableCell>
               </TableRow>
             ) : projects.length === 0 ? (
