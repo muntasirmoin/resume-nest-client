@@ -12,6 +12,7 @@ import {
   FaPhone,
   FaTwitter,
 } from "react-icons/fa";
+import { RiLoader2Line } from "react-icons/ri";
 
 type AboutData = {
   id: string;
@@ -56,7 +57,13 @@ export default function ViewAbout() {
   }, [authorId]);
 
   if (status === "loading")
-    return <p className="text-white text-center mt-6">Loading session...</p>;
+    return (
+      <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+        <RiLoader2Line className="text-2xl animate-spin" />
+        <span>Loading...</span>
+        <RiLoader2Line className="text-2xl animate-spin" />
+      </div>
+    );
   if (!session)
     return (
       <p className="text-red-400 text-center mt-6">
@@ -64,7 +71,14 @@ export default function ViewAbout() {
       </p>
     );
 
-  if (loading) return <p className="text-white text-center mt-6">Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+        <RiLoader2Line className="text-2xl animate-spin" />
+        <span>Loading...</span>
+        <RiLoader2Line className="text-2xl animate-spin" />
+      </div>
+    );
 
   if (!about)
     return (

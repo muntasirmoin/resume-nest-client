@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RiLoader2Line } from "react-icons/ri";
 
 const updateBlogSchema = z.object({
   title: z.string().min(3, "Title must be at least 3 characters"),
@@ -78,9 +79,11 @@ export default function UpdateBlogForm() {
 
   if (loading)
     return (
-      <p className="text-white text-center mt-10 animate-pulse">
-        Loading blog...
-      </p>
+      <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+        <RiLoader2Line className="text-2xl animate-spin" />
+        <span>Loading...</span>
+        <RiLoader2Line className="text-2xl animate-spin" />
+      </div>
     );
 
   return (

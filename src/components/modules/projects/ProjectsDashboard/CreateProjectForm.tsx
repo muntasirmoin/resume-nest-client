@@ -196,7 +196,7 @@ export default function CreateProjectForm() {
             disabled={isSubmitting}
             className="w-full cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition shadow-lg disabled:opacity-50"
           >
-            {isSubmitting ? "Submitting..." : "Create Project"}
+            {isSubmitting ? "Creating..." : "Create Project"}
           </Button>
         </form>
       </div>

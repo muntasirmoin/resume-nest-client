@@ -13,6 +13,7 @@ import { useSession } from "next-auth/react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { RiLoader2Line } from "react-icons/ri";
 
 // Zod schema for update (partial)
 const updateProjectSchema = z.object({
@@ -98,7 +99,13 @@ export default function UpdateProjectForm({
 
   if (!session) return null;
   if (loading)
-    return <p className="text-white text-center">Loading project data...</p>;
+    return (
+      <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+        <RiLoader2Line className="text-2xl animate-spin" />
+        <span>Loading...</span>
+        <RiLoader2Line className="text-2xl animate-spin" />
+      </div>
+    );
 
   return (
     <div className="max-w-3xl mx-auto p-6 md:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.6)] border border-slate-700 bg-slate-900/90 backdrop-blur-md">

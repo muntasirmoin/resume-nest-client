@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
+import { RiLoader2Line } from "react-icons/ri";
 
 type UpdateAboutFormData = {
   name: string;
@@ -96,7 +97,14 @@ export default function ManagementAbout() {
   }, [authorId, reset]);
 
   if (!session) return null;
-  if (loading) return <p className="text-white text-center mt-6">Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center gap-2 text-white text-lg font-semibold">
+        <RiLoader2Line className="text-2xl animate-spin" />
+        <span>Loading...</span>
+        <RiLoader2Line className="text-2xl animate-spin" />
+      </div>
+    );
   if (!about)
     return (
       <p className="text-red-400 text-center mt-6">No About info found.</p>

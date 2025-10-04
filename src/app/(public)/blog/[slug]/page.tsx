@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blog`);
   const data = await res.json();
 
-  return data.data.map((blog: any) => ({
+  return data?.data?.map((blog: any) => ({
     id: blog.id,
   }));
 }

@@ -22,7 +22,12 @@ import toast from "react-hot-toast";
 
 // Nested sidebar structure
 const sidebarLinks = [
-  { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
+  {
+    href: "/dashboard",
+    label: "Overview",
+    icon: LayoutDashboard,
+    children: [{ href: "/dashboard", label: "View" }],
+  },
   {
     href: "/dashboard/projects",
     label: "Projects",
