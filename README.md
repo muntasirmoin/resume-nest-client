@@ -69,7 +69,7 @@ It serves as a digital representation of professional identity, showcasing perso
 
 3. **Create an `.env` file at the root of the frontend**
 
-````bash
+```bash
   # Base API URL
   NEXT_PUBLIC_BASE_API=http://localhost:5000/api/v1
 
@@ -81,43 +81,42 @@ It serves as a digital representation of professional identity, showcasing perso
   NEXTAUTH_URL=http://localhost:3000
   NEXTAUTH_SECRET=your_nextauth_secret
   AUTH_SECRET=your_auth_secret
-  ```
+```
 
 4.  **Create an `.env` file at the root of the backend**
 
-  ```bash
-  # Server Port
-  PORT=5000
+```bash
+# Server Port
+PORT=5000
 
-  # Database URL
-  DATABASE_URL=*****
+# Database URL
+DATABASE_URL=*****
 
-  # Node environment
-  NODE_ENV=development
+# Node environment
+NODE_ENV=development
 
-  # JWT Settings
-  JWT_ACCESS_SECRET=*****
-  JWT_ACCESS_EXPIRES=***
-  JWT_REFRESH_SECRET=*****
-  JWT_REFRESH_EXPIRES=***
+# JWT Settings
+JWT_ACCESS_SECRET=*****
+JWT_ACCESS_EXPIRES=***
+JWT_REFRESH_SECRET=*****
+JWT_REFRESH_EXPIRES=***
 
-  # Bcrypt Settings
-  BCRYPT_SALT_ROUND=10
+# Bcrypt Settings
+BCRYPT_SALT_ROUND=10
 
-  # Admin Credentials
-  ADMIN_EMAIL=*****
-  ADMIN_PASSWORD=*****
+# Admin Credentials
+ADMIN_EMAIL=*****
+ADMIN_PASSWORD=*****
 
-  # Frontend URL
-  FRONTEND_URL=http://localhost:3000
-
-  ```
+# Frontend URL
+FRONTEND_URL=http://localhost:3000
+```
 
 5. **Install Dependencies**
 
- ```bash
- npm install / bun install
-````
+```bash
+npm install / bun install
+```
 
 ## 🚀 Live Deployment Links
 
