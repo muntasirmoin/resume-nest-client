@@ -164,10 +164,18 @@ export default function ManagementAbout() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 md:p-8 rounded-2xl shadow-lg border border-slate-700 bg-slate-900/90 backdrop-blur-md text-white">
-      <h2 className="text-3xl font-bold text-center mb-6">Update About</h2>
+      <div className="max-w-2xl mx-auto text-center mb-6 text-white">
+        <h2 className="text-3xl font-bold text-white">Mange About</h2>
+        <p className="text-gray-300 mt-2">
+          Update your personal information or delete this section permanently.
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         {/* Name */}
+        <label className="text-indigo-300 font-semibold text-sm md:text-base">
+          Name
+        </label>
         <Input {...register("name")} placeholder="Name" className="w-full" />
 
         {/* Email & Phone */}
@@ -191,6 +199,9 @@ export default function ManagementAbout() {
         </div>
 
         {/* Bio */}
+        <label className="text-indigo-300 font-semibold text-sm ml-2 md:text-base">
+          Bio
+        </label>
         <Textarea
           {...register("bio")}
           rows={4}
@@ -199,6 +210,9 @@ export default function ManagementAbout() {
         />
 
         {/* Skills */}
+        <label className="text-indigo-300 font-semibold text-sm md:text-base">
+          Skills
+        </label>
         <Input
           {...register("skills")}
           placeholder="Skills (comma separated)"

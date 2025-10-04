@@ -101,7 +101,15 @@ export default function DeleteProjectsTable() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 text-white">
-      <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
+      <div className="max-w-2xl mx-auto text-center mb-6 text-white">
+        <h2 className="text-3xl font-bold text-red-400">
+          🗑️ Delete Project 🗑️
+        </h2>
+        <p className="text-gray-300 mt-2">
+          Permanently remove this Project from your dashboard. This action
+          cannot be undone.
+        </p>
+      </div>
 
       <div className="rounded-lg border border-slate-700 overflow-hidden bg-slate-900/90">
         <Table>

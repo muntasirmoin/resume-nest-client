@@ -101,7 +101,7 @@ export default function DeleteBlogTable() {
   return (
     <div className="overflow-x-auto p-4">
       <div className="max-w-2xl mx-auto text-center mb-6 text-white">
-        <h2 className="text-3xl font-bold text-red-400">🗑️ Delete Blog</h2>
+        <h2 className="text-3xl font-bold text-red-400">🗑️ Delete Blog 🗑️</h2>
         <p className="text-gray-300 mt-2">
           Permanently remove this blog post from your dashboard. This action
           cannot be undone.

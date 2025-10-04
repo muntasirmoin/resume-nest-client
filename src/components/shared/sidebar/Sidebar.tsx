@@ -52,7 +52,7 @@ const sidebarLinks = [
     children: [
       { href: "/dashboard/about/view-about", label: "View About" },
       { href: "/dashboard/about/create-about", label: "Create About" },
-      { href: "/dashboard/about/management-about", label: "Management About" },
+      { href: "/dashboard/about/management-about", label: "Manage About" },
       // { href: "/dashboard/about/update", label: "Update About" },
     ],
   },
@@ -127,7 +127,7 @@ export default function Sidebar() {
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex md:w-64 flex-col backdrop-blur-sm shadow-sm bg-slate-900/80 text-white p-4">
-        <h2 className="text-xl font-bold mb-6">Dashboard</h2>
+        <h2 className="text-xl font-bold mb-6 mt-4 ml-2">Dashboard</h2>
         <nav className="flex flex-col gap-2">{renderLinks(sidebarLinks)}</nav>
 
         {/* <button

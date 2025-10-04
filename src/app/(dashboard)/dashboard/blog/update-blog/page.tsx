@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function UpdateBlogPage() {
   return (
     <div
-      className="min-h-screen p-6 md:p-10"
+      className="min-h-[90vh] p-6 md:p-10"
       style={{
         background: `linear-gradient(135deg, rgba(8,13,32,0.8), rgba(5,8,24,0.9), rgba(23,37,84,0.8))`,
         backdropFilter: "blur(4px)",

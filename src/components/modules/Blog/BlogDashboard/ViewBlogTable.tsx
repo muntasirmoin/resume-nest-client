@@ -25,7 +25,7 @@ interface IBlog {
   updatedAt: string;
 }
 
-interface Meta {
+export interface Meta {
   page: number;
   limit: number;
   totalPage: number;
@@ -60,6 +60,7 @@ export default function BlogTable() {
 
   useEffect(() => {
     fetchBlogs(meta.page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePageChange = (newPage: number) => {
@@ -81,22 +82,22 @@ export default function BlogTable() {
       <Table className="bg-slate-800 text-white rounded-xl shadow-2xl overflow-hidden">
         <TableHeader>
           <TableRow className="bg-slate-900">
-            <TableHead className="w-[50px] text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="w-[50px] text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               #
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               Title
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               Content
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               Status
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               Published At
             </TableHead>
-            <TableHead className="text-gray-200 font-medium uppercase text-sm py-3 px-4">
+            <TableHead className="text-gray-200 text-center font-medium uppercase text-sm py-3 px-4">
               Updated At
             </TableHead>
           </TableRow>
@@ -119,30 +120,30 @@ export default function BlogTable() {
             blogs.map((blog, idx) => (
               <TableRow
                 key={blog.id}
-                className="hover:bg-slate-700 transition duration-200 ease-in-out cursor-pointer"
+                className="hover:bg-slate-700text-center  transition duration-200 ease-in-out cursor-pointer"
               >
-                <TableCell className="py-3 px-4">
+                <TableCell className="text-center py-3 px-4">
                   {(meta.page - 1) * meta.limit + idx + 1}
                 </TableCell>
-                <TableCell className="py-3 px-4 font-semibold">
+                <TableCell className="text-center py-3 px-4 font-semibold">
                   {blog.title}
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="text-center py-3 px-4">
                   <span className="line-clamp-1">
                     {blog.content.slice(0, 10)}...
                   </span>
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="text-center py-3 px-4">
                   {blog.published ? (
                     <Badge className="bg-green-600 text-white">Published</Badge>
                   ) : (
                     <Badge className="bg-yellow-500 text-white">Draft</Badge>
                   )}
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="text-center py-3 px-4">
                   {format(new Date(blog.createdAt), "dd MMM yyyy, hh:mm a")}
                 </TableCell>
-                <TableCell className="py-3 px-4">
+                <TableCell className="text-center py-3 px-4">
                   {format(new Date(blog.updatedAt), "dd MMM yyyy, hh:mm a")}
                 </TableCell>
               </TableRow>
